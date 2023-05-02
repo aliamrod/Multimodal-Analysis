@@ -220,6 +220,85 @@ write.table(out,file="DGE/LMM_C1.txt",sep="\t")
 
 
 ##### ----- edgeR ----- #####
+# snRNA_pseudoBulk.R
+library(Seurat)
+library(DESeq2)
+library(dplyr)
+library(tidyverse)
+setwd("/project/Neuroinformatics_Core/Konopka_lab/s204365/RNA/ANA/input_dir")
+seur_rna= readRDS("/project/Neuroinformatics_Core/Konopka_lab/s204365/RNA/ANA/input_dir/SEUR_RNA_LABELLED_0414.RDS")
+
+##### ----- edgeR ----- #####
+# Load required libraries
+library(Seurat)
+library(edgeR)
+library(scRNAseq)
+library(scater)
+library(scran)
+library(Glimma)
+
+# Subset excitatory population.
+exc<- subset(x=seur_rna, subset=cellClass_02==as.character("Excitatory Neurons"))
+DefaultAssay(exc)<-'RNA'
+exc<-NormalizeData(object = exc)
+df<-as.data.frame(exc[["RNA"]]@data)
+metadata<-as.data.frame(exc@meta.data)
+meta=metadata
+
+# Set up the design matrix
+design <- model.matrix(~Genotype, data = exc@meta.data)
+
+# Extract the counts matrix
+sce = exc
+sce <- as.SingleCellExperiment(sce)
+sce <- logNormCounts(sce)
+var_mod <- modelGeneVar(sce)
+hvg_genes <- getTopHVGs(var_mod, n=500)
+hvg_sce <- sce[hvg_genes, ]
+hvg_sce <- logNormCounts(hvg_sce)
+#counts 
+sce_counts<-counts(sce)
+
+#counts <- assay(exc, "RNA")@data
+
+# Convert counts to DGEList object
+dge <- DGEList(counts = sce_counts, group = exc@meta.data$Genotype)
+
+# Filter lowly expressed genes
+keep <- rowSums(cpm(dge) >= 1) >= 2
+dge <- dge[keep, , keep.lib.sizes = FALSE]
+
+# Estimate library sizes and normalization factors
+dge <- calcNormFactors(dge)
+
+# Estimate dispersions and fit GLMs
+dge <- estimateGLMCommonDisp(dge)
+dge <- estimateGLMTagwiseDisp(dge)
+
+# Perform differential expression analysis
+fit <- glmFit(dge, design)
+lrt <- glmLRT(fit, coef = 2) # coef = 2 specifies the comparison of interest (e.g. Mutant vs Wildtype)
+
+# Filter differentially expressed genes by FDR and logFC
+de_genes <- decideTestsDGE(lrt, p.value = 0.05, adjust.method = "BH")
+de_genes <- rownames(dge)[de_genes$FDR < 0.05 & abs(lrt$coefficients[, 2]) > log2(1.5)]
+
+# Add differential expression results to Seurat object
+my_seurat@assays$RNA@data$edgeR_FDR <- NA
+my_seurat@assays$RNA@data$edgeR_FDR[de_genes] <- de_genes$FDR[match(de_genes, rownames(de_genes$FDR))]
+my_seurat@assays$RNA@data$edgeR_logFC <- NA
+my_seurat@assays$RNA@data$edgeR_logFC[de_genes] <- lrt$coefficients[match(de_genes, rownames(lrt$coefficients)), 2]
+
+# Save the Seurat object with differential expression results
+saveRDS(my_seurat, "my_seurat_object_with_edgeR_results.rds")
 
 
-gsub("(.*)_.*_.*", "\\1"  ,'CKO_AO2_AAAGATGCACCTCGGA-1')
+
+
+
+
+
+
+
+
+####gsub("(.*)_.*_.*", "\\1"  ,'CKO_AO2_AAAGATGCACCTCGGA-1')
