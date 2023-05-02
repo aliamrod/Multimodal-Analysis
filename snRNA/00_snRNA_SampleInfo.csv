@@ -1,0 +1,16 @@
+Library ID, Brain Region, Age, Genotype, Batch, Cells Targeted
+AO1         Cortex        P0   FLOX CNTRL 1     10,000
+
+AO2         Cortex        P0   E1 CKO     1     10,000
+
+AO3         Cortex        P0   E1 CKO     2     10,000
+
+AO4         Cortex        P0   FLOX CNTRL 2     10,000
+
+AO5         Cortex        P0   FLOX CNTRL 3     8,000
+
+AO6         Cortex        P0   FLOX CNTRL 3     8,000
+
+AO7         Cortex        P0   E1 CKO     3     8,000
+
+AO8         Cortex        P0   E1 CKO     3     8,000
