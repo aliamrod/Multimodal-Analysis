@@ -1,5 +1,4 @@
 # Multimodal-Analysis of transcriptional regulatory landscape of developing mouse cortex (snRNA + snATAC Pipeline)
-snRNA + snATAC-seq Analyses
 
 ![upload_gif](https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/e0ed5460-3481-487c-9670-c58466d627fa)
 
