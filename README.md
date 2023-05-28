@@ -47,15 +47,16 @@ DESeq2 detects count outliers using Cook's distance and removes these genes from
 
 02_snATAC_aggregateBin - Final QC and code for generating count matrices based on genomic bins (for initial clustering), gene bodies and promoters.
 
-03_snATAC_Normalization - Initial clustering based on fragments from fixed-size genome wide bins.
+03_snATAC:
+  Includes: Normalization => Initial clustering based on fragments from fixed-size genome wide bins.
 
-04_snATAC_peakNormalization - Final peak calling based on initial clusters to generate high-quality peak set; used for final clustering and visualization.
+            Peak Normalization => Final peak calling based on initial clusters to generate high-quality peak set; used for final clustering and visualization.
 
-05_snATAC_chromVARMotifs - Computing motif accessibility deviations using chromVAR (Schep et al., 2017) implemented in Signac.
+            Identification of chromVARMotifs => Computing motif accessibility deviations using chromVAR (Schep et al., 2017) implemented in Signac.
 
-06_snATAC_Compute_Gene_Scores - Computing gene activity scores utilizing Cicero; used for subsequent integration analyses. 
+            Compatation of Gene Scores => Computing gene activity scores utilizing Cicero; used for subsequent integration analyses. 
 
-07_snATAC_Cluster_Unique_Peaks - Identification of cluster specific peaks.
+            Locating unique peaks => Identification of cluster specific peaks.
 
 
 
