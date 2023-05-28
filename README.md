@@ -43,7 +43,7 @@ DESeq2 detects count outliers using Cook's distance and removes these genes from
 
 **snATAC-seq Analysis**
 
-**01_snATAC_QC ** - Quality control of snATAC data based on number of fragments and TSS enrichment present.
+**01_snATAC_QC** - Quality control of snATAC data based on number of fragments and TSS enrichment present.
 
 **02_snATAC_aggregateBin** - Final QC and code for generating count matrices based on genomic bins (for initial clustering), gene bodies and promoters.
 
