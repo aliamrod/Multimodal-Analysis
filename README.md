@@ -30,6 +30,7 @@ DESeq2 detects count outliers using Cook's distance and removes these genes from
 <p align="center">
 <img width="821" alt="Screen Shot 2023-05-27 at 8 29 24 PM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/7b343b31-995c-46e5-a501-539df1cb6fed">
 
+<img width="878" alt="Screen Shot 2023-06-06 at 11 38 14 AM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/9554b6a0-064b-4e17-9a71-ac726b5f45b6">
 
 
 
