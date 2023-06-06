@@ -63,11 +63,12 @@ DESeq2 detects count outliers using Cook's distance and removes these genes from
             Compatation of Gene Scores => Computing gene activity scores utilizing Cicero; used for subsequent integration analyses. 
 
             Locating unique peaks => Identification of cluster specific peaks.
+  
+<img width="825" alt="Screen Shot 2023-05-27 at 8 30 00 PM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/00919d18-f45d-40c9-9a51-78a620a4fe8c">
 
-
-  <img width="1332" alt="Screen Shot 2023-0<img width="562" alt="Screen Shot 2023-06-06 at 11 40 34 AM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/37d13c9e-ab6e-4f0d-9830-8c41db8190e7">
-5-30 at 3 31 30 PM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/545303ea-d74e-4e82-8d87-339b8da7ce08">
-
+  
+  
+<img width="562" alt="Screen Shot 2023-06-06 at 11 40 34 AM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/763510e3-5ae1-4db8-a8e1-fc3351c6124e">
 
 
 Last Update: 01 May, 2023.
