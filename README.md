@@ -65,7 +65,8 @@ DESeq2 detects count outliers using Cook's distance and removes these genes from
             Locating unique peaks => Identification of cluster specific peaks.
 
 
-  <img width="1332" alt="Screen Shot 2023-05-30 at 3 31 30 PM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/545303ea-d74e-4e82-8d87-339b8da7ce08">
+  <img width="1332" alt="Screen Shot 2023-0<img width="562" alt="Screen Shot 2023-06-06 at 11 40 34 AM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/37d13c9e-ab6e-4f0d-9830-8c41db8190e7">
+5-30 at 3 31 30 PM" src="https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/545303ea-d74e-4e82-8d87-339b8da7ce08">
 
 
 
