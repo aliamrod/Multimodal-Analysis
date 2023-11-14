@@ -25,6 +25,8 @@ DESeq2 detects count outliers using Cook's distance and removes these genes from
 
 **08_snRNA_monocle3** - Pseudotime analysis utilizing Monocle3. Analyses include model fitting to identify gene expression changes as a function of pseudotime.
 
+![Screenshot 2023-11-14 at 11 45 39 AM](https://github.com/aliamrod/Multimodal-Analysis/assets/62684338/ae07e891-2f6b-4eb0-92ba-14ad14ab6c0a)
+
 
 
 <p align="center">
